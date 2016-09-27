@@ -22,8 +22,6 @@ function Get-SystemDiskSize
                    Position=0)]
         [string[]]$ComputerNames,
 
-        [string]$LogName = ".\SystemDisks.csv",
-
         [string]$Drive = "C:"
     )
 
@@ -49,7 +47,7 @@ function Get-SystemDiskSize
                 }
             }
 
-            Write-Output  ('{0},{1:N1},{2:N1}' -f $System.Name,$System.DiskSize,$System.FreeSpace)
+            $System
         }
     }
 }
